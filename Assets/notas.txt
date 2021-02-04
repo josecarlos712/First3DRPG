@@ -1,0 +1,31 @@
+INICIALIZACION
+- Se debe instanciar la clase InventaryManager para que se cargen todos los objetos
+
+COMPORTAMIENTOS DE LA CÁMARA
+- Not fixed. La cámara es fija y sigue al personaje con un humbral máximo de distancia que no supera para que el personaje no se aleje demasiado. Comportamiento básico de la cámara incluido
+	en el resto de comportamientos. Se utiliza para mapas abiertos sin puntos ciegos o mapas que sean una sola habitación.
+- Fixed. La camára se situa a una distancia fija detrás del jugador. No es compatible con las configuraciones administradas por un manager
+- cameraAnchorsManager. Por el mapa hay una serie de puntos distribuidos (anclas de cámara/cameraAnchors) que marcan donde puede colocarse esta.
+	La cámara va cambiando de posición dependiendo de que ancla esté mas cerca del jugador, dejando siempre una "holgura" (betweenDistance) para evitar el cambio intermitente entre
+	un ancla y otra al estar el jugador en un límite de zona. Se utiliza para mapas abiertos con puntos ciegos (esquinas, pasillos, etc).
+- cameraZonesManager. Por el mapa se definen zonas de camara (cameraZones) a las que se le asigna una posición de cámara. La cámara va cambiando de posición cuando el personaje entra en
+	una de estas zonas. Se trata del mismo comportamiento que las cameraAnchors pero el cambio lo definen zonas delimitadas en lugar de la distancia al personaje.
+	Se utiliza para mapas con varias habitaciones sin cambio de escena entre ellas o para mapas abiertos con zonas delimitadas por muros que necesitan una cambio
+	a una cámara interior.
+
+DIARIO (06/07/2020 - )
+- (06/07/2020) El personaje se mueve correctamente (mediante fuerzas) y salta mediante una explosion en la parte inferior
+- Probando iluminacion
+- (06/07/2020) Creado cameraAnchorsManager
+- (06/07/2020) Creado cameraZonesManager
+
+ÚLTIMAS ACTUALIZACIONES
+- (06/07/2020) El personaje se mueve correctamente (mediante fuerzas) y salta mediante una explosion en la parte inferior
+- Probando iluminacion
+- (06/07/2020) Cambio de localizacion de la camara segun la posicion la distancia al personaje (cameraAnchorsManager)
+- (06/07/2020) Creado cameraZonesManager
+
+TO-DO
+- Añadir sistema de recolección de objetos
+- Añadir sistema de inventario
+
